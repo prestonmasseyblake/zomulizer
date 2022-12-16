@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+body {
+    font-family: 'Archivo Black', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    /* background:linear-gradient(#262626,#eaeaea,#262626); */
+}
+
+.main-wrapper {
+    border-radius: 20px;
+    margin: 20px;
+    position: relative;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2c2c2c;
+    background: radial-gradient(ellipse at center, #29382c 0%, #0c100d 100%);
+}
+
+.loader {
+    position: relative;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.noise-wrapper {
+
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.noise-wrapper:after {
+
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.noise {
+    position: absolute;
+    top: -500px;
+    right: -500px;
+    bottom: -500px;
+    left: -500px;
+    background: transparent url(https://www.dropbox.com/s/h7ab1c82ctzy83n/noise.png?raw=1) 0 0;
+    background-size: 320px 320px;
+    opacity: .20;
+    animation: noise 1s steps(8, end) infinite both;
+}
+
+@keyframes noise {
+    0% {
+        transform: translateX(0px, 0px);
+    }
+
+    10% {
+        transform: translate(-100px, 100px);
+    }
+
+    20% {
+        transform: translate(150px, -100px);
+    }
+
+    30% {
+        transform: translate(-100px, 100px);
+    }
+
+    40% {
+        transform: translate(100px, -150px);
+    }
+
+    50% {
+        transform: translate(-100px, 200px);
+    }
+
+    60% {
+        transform: translate(-200px, -100px);
+    }
+
+    70% {
+        transform: translateY(50px, 100px);
+    }
+
+    80% {
+        transform: translate(100px, -150px);
+    }
+
+    90% {
+        transform: translate(0px, 200px);
+    }
+
+    100% {
+        transform: translate(-100px, 100px);
+    }
+}
+
+.button {
+    cursor: pointer;
+    width: 9.2em;
+    height: 9.2em;
+    border-radius: 50%;
+    background-image:
+        -webkit-radial-gradient(50% 0%, 8% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+        -webkit-radial-gradient(50% 100%, 12% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%),
+        -webkit-radial-gradient(0% 50%, 50% 7%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%),
+        -webkit-radial-gradient(100% 50%, 50% 5%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(44, 0, 0, 0) 0%, rgba(44, 0, 0, 0) 3%, rgba(44, 0, 0, 0) 3.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(255, 30, 30, 0) 0%, rgba(255, 30, 30, 0) 6%, rgba(255, 30, 30, 0.1) 7.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(210, 25, 25, 0) 0%, rgba(210, 25, 25, 0) 1.2%, rgba(210, 25, 25, 0.2) 2.2%),
+        -webkit-radial-gradient(50% 50%, 200% 50%, rgb(130, 10, 10) 5%, rgb(120, 10, 10) 30%, rgb(170, 17, 17) 100%);
+    box-shadow: inset 0 0.25rem 0.3rem rgb(153, 76, 76);
+}
+
+
+.inner-frame {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    box-shadow: inset 0 0.25rem 0.15rem rgba(199, 199, 199, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.frame {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 -5px 5px 3px,
+        rgba(0, 0, 0, 0.15) 0 5px 5px 3px,
+        rgba(30, 50, 90, 0.3) 0 5px 6px 4px,
+        inset 0 0.25rem 0.15rem rgba(138, 138, 138, 0.2);
+}
+
+.button:active {
+    width: 9rem;
+    height: 9rem;
+    filter: brightness(97%);
+    transform: rotate(0.5deg);
+    box-shadow: inset rgba(61, 0, 0, 0.7) 0 2px 2px 2px,
+        inset rgba(61, 0, 0, 0.15) 0 2px 2px 5px;
+}
+
+.button:active {
+    width: 9rem;
+    height: 9rem;
+    filter: brightness(97%);
+    transform: rotate(0.5deg);
+    box-shadow: inset rgba(61, 0, 0, 0.7) 0 2px 2px 2px,
+        inset rgba(61, 0, 0, 0.15) 0 2px 2px 5px;
+}
+
+
+.top-wrapper {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+        url("./metal.jpg");
+    background-position: center center;
+    width: 100%;
+
+    background-position: center center;
+}
+
+
+.logo {
+    opacity: .8;
+    animation: spin 8s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.btn-scale {
+    transform: scale(0.7);
+
+}
+
+
+.label {
+    padding: 4px;
+    text-align: center;
+    border-radius: 2%;
+    background: rgb(190, 190, 190);
+    margin-bottom: 2.5rem;
+    font-size: 36px;
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 -5px 5px 1px,
+        rgba(0, 0, 0, 0.25) 0 5px 5px 1px,
+        rgba(30, 50, 90, 0.3) 0 5px 5px 2px,
+        inset 0 0.25rem 0.125rem rgba(255, 255, 255, 0.2);
+}
+
+.btn-scale-btn {
+    transform: scale(0.2);
+}
+
+
+.graph-container {
+    width: 100%;
+    height: 100vh !important;
+    
+    /* height: 500px; */
+}
